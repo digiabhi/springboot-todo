@@ -8,6 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Todo {
-    private String id;
+    private Integer id;
     private String content;
 }

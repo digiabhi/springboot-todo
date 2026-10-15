@@ -13,13 +13,19 @@ import java.util.List;
 public class InMemoryTodoRepository implements ITodoRepository {
     private List<Todo> todos = new ArrayList<>(
             Arrays.asList(
-                    new Todo("1", "Buy Groceries"),
-                    new Todo("2", "Clean the house"),
-                    new Todo("3", "Go to the gym")
+                    new Todo(1, "Buy Groceries"),
+                    new Todo(2, "Clean the house"),
+                    new Todo(3, "Go to the gym")
             )
     );
 
     public List<Todo> findAll() {
         return todos;
+    }
+
+    public Todo save(Integer newTodoId, String todoContent) {
+        Todo newTodo = new Todo(newTodoId, todoContent);
+        todos.add(newTodo);
+        return newTodo;
     }
 }
